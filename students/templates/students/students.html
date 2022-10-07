@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--    Bootstrap CSS Linked-->
+  <link rel="stylesheet" href="{% static 'main/css/bootstrap.css' %}" >
+<!--    Custom CSS Linked.....-->
+    <link rel="stylesheet" type="text/css" href="{% static 'students/css/students.css' %}">
+    <title>Student Management</title>
+</head>
+<body>
+<h1 class="tab-heading">Student Management System</h1>
+
+<!--Bootstrap Table.....-->
+<button id="my-btn" class="btn btn-success mb-3 ms-3" >Show Data</button>
+<a href="/students/addstu" id="adding-btn" class="btn btn-success mb-3 me-3 btn-info" >Add Students</a>
+<div id="my-table">
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Student Name</th>
+      <th scope="col">Student Role</th>
+      <th scope="col">Student Address</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for data in stud %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{data.stud_name}}</td>
+      <td>{{data.stud_role}}</td>
+      <td>{{data.stud_address}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<!--Bootstrap JavaScript Linked-->
+  <script src="{% static 'main/js/bootstrap.js' %}"></script>
+<!--Custom JavaScript Linked....-->
+  <script src="{% static 'students/js/students.js' %}"></script>
+</body>
+</html>

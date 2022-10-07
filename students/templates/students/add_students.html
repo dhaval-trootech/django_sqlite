@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    Bootstrap CSS Linked-->
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.css' %}" >
+    <!--    Custom CSS Linked.....-->
+    <link rel="stylesheet" type="text/css" href="{% static 'students/css/students.css' %}">
+    <title>Add Students</title>
+</head>
+<body>
+<h1 class="tab-heading" >Adding Students Records</h1>
+
+<!--REGISTRATION FORM FOR STUDENTS-->
+<form action="" method="POST">
+  {% csrf_token %}
+<div class="container">
+    <hr>
+    <label> Student ID : </label>
+<input type="text" name="sid" placeholder="Enter Student ID" required>
+ <label> Student Name : </label>
+    <input type="text" name="sname" placeholder= "Enter Your Name" required />
+ <div>
+ <label> Roles : </label>
+    <select name="srole">
+    <option value="1">------</option>
+    <option value="Python Dev">Python Dev</option>
+    <option value="React Dev">React Dev</option>
+    <option value="PHP Dev">PHP Dev </option>
+    </select>
+ </div>
+
+<label> Phone : </label>
+<input type="text" name="sphone" placeholder="Enter Your Phone" size="16" maxlength="10" required>
+
+<label> Current Address : </label>
+<textarea name="saddress" cols="80" rows="5" placeholder="Current Address" required>
+</textarea>
+<!--    REGISTER BUTTON-->
+    <button type="submit" class="registerbtn">Register</button>
+    <!--    View Students Button-->
+    <a href="/students" id="view-btn" class="btn btn-outline-success" >View Students</a>
+<!--    RESET BUTTON-->
+    <button type="reset" class="resetbtn">Reset</button>
+
+</div>
+</form>
+<!--REGISTRATION FORM FOR STUDENTS END.......-->
+
+
+<!--Bootstrap JavaScript Linked-->
+  <script src="{% static 'main/js/bootstrap.js' %}"></script>
+<!--Custom JavaScript Linked....-->
+  <script src="{% static 'students/js/students.js' %}"></script>
+</body>
+</html>
